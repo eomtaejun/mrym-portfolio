@@ -1,0 +1,307 @@
+/* reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: #000;
+    display: block;
+}
+
+body{
+    height: 5000px;
+    background-color: lightblue; /* header background-color: transparent를 보기 위한 임시 배경색 */
+}
+/* //reset */
+
+/* header */
+header{
+    z-index: 9999;
+}
+header .tj-headerInnerWrap{
+    background-color: transparent;
+    transition: background-color 0.4s;
+}
+
+/* progress bar */
+header .tj-progressWrap{
+    width: 100%;
+    height: 3px;
+
+    position: fixed;
+    top: 77px;
+    left: 0;
+    z-index: 999999999;
+
+    background-color: rgba(243, 243, 243, 0.2);
+}
+
+header .tj-progressWrap .tj-progressBar{
+    height: 100%;
+    width: 0;
+    background-color: navy;
+
+    box-shadow: 0 0 15px rgba(0, 0, 128, 0.8);
+}
+/* //progress bar */
+
+/* title */
+header .tj-navbar-brand{
+    font-family: "Roboto", sans-serif;
+    font-size: 36px;
+    color: #1c1c1c;
+    font-weight: bold;
+    transition: color 0.4s, font-weight 0.4s;
+}
+header .tj-headerText-scrollEffect{
+    color: #f3f3f3;
+    transition: color 0.4s, font-weight 0.4s;
+}
+header .tj-headerText-scrollEffect:hover{
+    color: navy;
+}
+header .tj-navbar-brand:hover{
+    color: navy;
+}
+/* //title */
+
+/* menu */
+header .nav-item .tj-nav-link span{
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+}
+header .nav-item .tj-nav-link{
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: #1c1c1c;
+    transition: color, font-weight 0.4s;
+}
+header .nav-item .tj-nav-link:hover{
+    font-weight: bold;
+    color: navy;
+}
+
+header .nav-item .tj-nav-link .tj-AboutMe{
+    width: 97px;
+}
+header .nav-item .tj-nav-link .tj-Future{
+    width: 70px;
+}
+header .nav-item .tj-nav-link .tj-Skills{
+    width: 59px;
+}
+header .nav-item .tj-nav-link .tj-PersonalityValue{
+    width: 170px;
+}
+header .nav-item .tj-nav-link .tj-Favorite{
+    width: 81px;
+}
+header .nav-item .tj-nav-link .tj-Archiving{
+    width: 93px;
+}
+/* //menu */
+/* //header */
+
+/* main body */
+.tj-innerWrap{
+    padding: 100px 0 0 0;
+    border: 1px solid #000;
+}
+/* main section */
+.tj-mainInnerWrap{
+    padding: 100px 0 0 0;
+    height: 600px;
+    border: 1px solid black;
+
+    position: relative;
+}
+
+.tj-mainInnerWrap .tj-textWrap{
+    text-align: center;
+    width: 100%;
+    margin-top: 32px;
+}
+
+.tj-mainInnerWrap .tj-textWrap p span{
+    color: #f3f3f3;
+}
+
+.tj-mainInnerWrap .tj-textWrap p:nth-child(1)>span{
+    font-size: 3rem;
+    font-weight: bold;
+    /* border: 1px solid #222; */
+}
+
+.tj-mainInnerWrap .tj-textWrap p:nth-child(2)>span{
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+.tj-mainInnerWrap .tj-textWrap p:nth-child(3)>span{
+    display: inline-block;
+
+    font-size: 1.4rem;
+    opacity: 0.5;
+
+    transition: all 0.35s;
+}
+.tj-mainInnerWrap .tj-textWrap p:nth-child(3)>span:hover{
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.tj-mainInnerWrap button[type="button"]{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 200px;
+    height: 70px;
+    border-radius: 35px;
+
+    border: 1px solid #222;
+    box-shadow: 3px 3px 7px 1px #111;
+}
+.tj-mainInnerWrap button[type="button"]>a{
+    width: 100%;
+    height: 100%;
+    border-radius: 35px;
+}
+/* //main section */
+
+/* AboutMe section */
+.tj-AboutMeInnerWrap{
+    padding: 100px 0;    
+}
+
+.tj-AboutMeInnerWrap .tj-title{
+    display: none;
+}
+
+.tj-AboutMe_contentsWrap{
+    margin: 0 auto;
+    width: 80%;
+}
+
+.tj-AboutMe_contentsWrap .content_box:nth-child(1){
+    position: relative;
+}
+
+.tj-AboutMe_contentsWrap .content_box:nth-child(1)::after{
+    content: "About Me";
+    position : absolute;
+    top: 51.93px;
+    left: -110px;
+    transform: rotate(-90deg);
+
+    text-align: end;
+    font-size: 2.3rem;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+}
+@media screen and (max-width: 767px){
+    .tj-AboutMe_contentsWrap .content_box:nth-child(1)::after{
+        display: none;
+    }
+
+    .tj-AboutMeInnerWrap>.tj-title{
+        display: block;
+
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        font-family: "Roboto", sans-serif;
+    }
+}
+
+.tj-AboutMe_contentsWrap>.content_box{
+    width: 300px;
+    height: 120px;
+    border: 1px solid #000;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    align-items: center;
+}
+/* //AboutMe section */
+
+/* Future */
+.tj-FutureInnerWrap{
+    height: 800px;
+}
+
+.tj-FutureInnerWrap>.tj-title{
+    width: 800px;
+    margin: 0 auto;
+    text-align: start;
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+}
+
+.tj-FutureInnerWrap>.tj-content-box{
+    width: 90%;
+    max-width: 800px;
+    height: 500px ;
+    max-height: 100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    /* border: 1px solid #000; */
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15),
+                0 3px 7px rgba(0, 0, 0, 0.1);
+
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.tj-FutureInnerWrap>.tj-content-box .tj-content-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100px;
+    font-size: 1.7rem;
+    font-weight: 470;
+    font-family: "Poppins", sans-serif;
+    
+}
+
+.tj-FutureInnerWrap>button[type="button"]{
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15),
+                0 3px 7px rgba(0, 0, 0, 0.1);
+
+    background-color: #fff;
+    margin: 30px auto 0 auto;
+
+    transform: rotate(0deg);
+    transition: transform 0.5s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tj-FutureInnerWrap>button[type="button"]>i{
+    transition: transform 0.5s ease-in-out;
+}
+/* //Future section */
+/* //main body */
+
+/* footer */
+/* //footer */
