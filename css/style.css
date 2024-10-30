@@ -111,6 +111,7 @@ header .nav-item .tj-nav-link .tj-Archiving{
 
 /* main body */
 .tj-innerWrap{
+    margin: 0 auto !important;
     padding: 100px 0 0 0;
     border: 1px solid #000;
 }
@@ -131,6 +132,8 @@ header .nav-item .tj-nav-link .tj-Archiving{
 
 .tj-mainInnerWrap .tj-textWrap p span{
     color: #f3f3f3;
+
+    cursor: default;
 }
 
 .tj-mainInnerWrap .tj-textWrap p:nth-child(1)>span{
@@ -184,6 +187,11 @@ header .nav-item .tj-nav-link .tj-Archiving{
 
 .tj-AboutMeInnerWrap .tj-title{
     display: none;
+
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
 }
 
 .tj-AboutMe_contentsWrap{
@@ -198,12 +206,12 @@ header .nav-item .tj-nav-link .tj-Archiving{
 .tj-AboutMe_contentsWrap .content_box:nth-child(1)::after{
     content: "About Me";
     position : absolute;
-    top: 51.93px;
-    left: -110px;
+    top: 61px;
+    left: -120px;
     transform: rotate(-90deg);
 
     text-align: end;
-    font-size: 2.3rem;
+    font-size: 2.7rem;
     font-weight: bold;
     font-family: "Roboto", sans-serif;
 }
@@ -214,11 +222,6 @@ header .nav-item .tj-nav-link .tj-Archiving{
 
     .tj-AboutMeInnerWrap>.tj-title{
         display: block;
-
-        text-align: center;
-        font-size: 2rem;
-        font-weight: bold;
-        font-family: "Roboto", sans-serif;
     }
 }
 
@@ -230,8 +233,42 @@ header .nav-item .tj-nav-link .tj-Archiving{
 
     display: flex;
     justify-content: flex-start;
-    gap: 30px;
+    /* gap: 30px; */
+
     align-items: center;
+}
+
+.tj-AboutMe_contentsWrap>.content_box .img{
+    width: 64px;
+    height: 64px;
+    margin: 0 30px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #ccc;
+}
+.tj-AboutMe_contentsWrap>.content_box .img>img{
+    width: 85%;
+    height: 85%;
+    border-radius: 50%;
+}
+
+.tj-AboutMe_contentsWrap>.content_box .content{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.tj-AboutMe_contentsWrap>.content_box .content>p{
+    font-family: "Poppins", sans-serif;
+    font-size: 1.7rem;
+    font-weight: 550;
+
+    margin-bottom: 0; /* p 기본 margin-bottom 제거 */
 }
 /* //AboutMe section */
 
@@ -241,18 +278,19 @@ header .nav-item .tj-nav-link .tj-Archiving{
 }
 
 .tj-FutureInnerWrap>.tj-title{
-    width: 800px;
+    width: 90%;
+    max-width: 800px;
     margin: 0 auto;
     text-align: start;
     font-size: 3.5rem;
     font-weight: bold;
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 .tj-FutureInnerWrap>.tj-content-box{
     width: 90%;
     max-width: 800px;
-    height: 500px ;
+    height: 500px;
     max-height: 100px;
     margin: 0 auto;
     padding: 0 20px;
@@ -275,7 +313,6 @@ header .nav-item .tj-nav-link .tj-Archiving{
     font-size: 1.7rem;
     font-weight: 470;
     font-family: "Poppins", sans-serif;
-    
 }
 
 .tj-FutureInnerWrap>button[type="button"]{
@@ -301,6 +338,96 @@ header .nav-item .tj-nav-link .tj-Archiving{
     transition: transform 0.5s ease-in-out;
 }
 /* //Future section */
+
+/* Skills section */
+.tj-SkillsInnerWrap{
+    padding-bottom: 50px;
+}
+
+.tj-SkillsInnerWrap>.tj-title{
+    width: 80%;
+    max-width: 800px;
+    /* margin: 0 auto 30px auto; */
+    margin: 0 auto;
+    text-align: start;
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tj-SkillsInnerWrap>.tj-Skills_contentsWrap{
+    width: 80%;
+    max-width: 800px;
+    /* height: 400px; */
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15),
+                0 3px 7px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    /* overflow: hidden; */
+    transition: max-height 0.5s ease-in-out;
+}
+
+.tj-SkillsInnerWrap>.tj-Skills_contentsWrap .tj-content{
+    /* 공통 */
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 15px 20px;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.tj-SkillsInnerWrap>.tj-Skills_contentsWrap .tj-content>.tj-content-title{
+    /* 공통 */
+    margin: 0 30px 0 0;
+    font-size: 1.4rem;
+    font-weight: 550;
+}
+.tj-SkillsInnerWrap>.tj-Skills_contentsWrap .tj-content>.tj-content-text{
+    /* 공통 */
+    margin: 0;
+    padding: 0;
+
+    font-weight: 520;
+
+    display: inline-flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+}
+.tj-SkillsInnerWrap>.tj-Skills_contentsWrap .tj-content>.tj-content-text>li{
+    /* 공통 */
+    font-size: 1.2rem;
+    /* width: auto; */
+    /* margin-bottom: 0; */
+}
+.tj-SkillsInnerWrap>.tj-Skills_contentsWrap .tj-content+.tj-content{
+    margin-top: 20px;
+}
+/* //Skills section */
+
+/* Personality&Value section */
+.tj-carousel-content{
+    width: 800px;
+    height: 500px;
+    margin: 0 auto;
+    background-color: #eee;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15),
+                0 3px 7px rgba(0, 0, 0, 0.1);
+}
+/* //Personality&Value section */
 /* //main body */
 
 /* footer */
