@@ -17,8 +17,9 @@ const progressWrap=document.querySelector("header .tj-progressWrap");
 const headerText=document.querySelectorAll("header .tj-headerText");
 
 window.addEventListener("scroll", ()=>{
-    if(document.documentElement.scrollTop<500){
-        headerBackground.style.backgroundColor="transparent";
+    if(document.documentElement.scrollTop<510){
+        headerBackground.style.backgroundColor="rgba(170, 170, 170, 0.2)";
+        headerBackground.style.backdropFilter="blur(5px)";
         progressWrap.style.backgroundColor="rgba(243, 243, 243, 0.2)";
         headerText.forEach(element=>{
             element.classList.toggle("tj-headerText-scrollEffect", false);
@@ -38,7 +39,7 @@ window.addEventListener("scroll", ()=>{
 // Future button
 const FutureBtn=document.querySelector(".tj-FutureInnerWrap>button[type='button']");
 const FutureBtnText=document.querySelector(".tj-FutureInnerWrap>button[type='button']>i");
-const contentBox=document.querySelector(".tj-FutureInnerWrap>.tj-content-box");
+const contentBox=document.querySelector(".tj-FutureInnerWrap>.tj-contentsWrap");
 let contentBox_open=false;
 
 FutureBtn.addEventListener("click", ()=>{
@@ -51,5 +52,24 @@ FutureBtn.addEventListener("click", ()=>{
         contentBox.style.maxHeight="100px";
         FutureBtnText.style.transform="rotate(0deg)";
         contentBox_open=false;
+    }
+});
+
+// Personality&Value content title
+const PVtitleBtn=document.querySelector(".tj-PersonalityValueInnerWrap>.tj-carouselWrap .single-control-btn");
+const PtitleText=document.querySelector(".tj-PersonalityValueInnerWrap>.tj-carouselWrap .single-control-btn .tj-carousel-btn-text-p");
+const VtitleText=document.querySelector(".tj-PersonalityValueInnerWrap>.tj-carouselWrap .single-control-btn .tj-carousel-btn-text-v");
+let PV_active=false;
+
+PVtitleBtn.addEventListener("click", function(){
+    if(PV_active===false){
+        PtitleText.classList.toggle("active", true);
+        VtitleText.classList.toggle("active", false);
+        PV_active=true;
+    }
+    else{
+        VtitleText.classList.toggle("active", true);
+        PtitleText.classList.toggle("active", false);
+        PV_active=false;
     }
 });
