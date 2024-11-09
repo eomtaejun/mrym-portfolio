@@ -56,7 +56,7 @@ window.addEventListener("scroll", headerStyle);
 window.addEventListener("load", headerStyle);
 
 // main button
-const main_btn=document.querySelector(".tj-mainInnerWrap .tj-main-btn");
+const main_btn=document.querySelector(".tj-mainInnerWrap .tj-main-btnWrap");
 
 main_btn.addEventListener("click", function(){
     const main_sectionHeight=document.querySelector(".tj-Main-fullWrap").clientHeight;
@@ -67,6 +67,64 @@ main_btn.addEventListener("click", function(){
     });
 });
 
+// AboueMe section
+// const box = document.querySelector(".tj-AboutMeInnerWrap>.tj-contentsWrap");
+// let lastScrollTop = 0;
+
+// box.addEventListener("scroll", function() {
+//   const scrollTop = box.scrollTop;
+
+//   if (scrollTop > lastScrollTop) {
+//     // 아래로 스크롤
+//     box.scrollBy({
+//         top: 100,
+//         behavior: "smooth"
+//     });
+//   } else if (scrollTop < lastScrollTop) {
+//     // 위로 스크롤
+//     box.scrollBy({
+//         top: -100,
+//         behavior: "smooth"
+//     });
+//   }
+
+//   // 마지막 스크롤 위치 업데이트 후 바로 scrollTop 값을 다시 설정
+//   lastScrollTop = box.scrollTop;
+// });
+
+const box = document.querySelector(".tj-AboutMeInnerWrap>.tj-contentsWrap");
+const up_btn=document.querySelector(".tj-AboutMeInnerWrap>.tj-btnWrap .up");
+const down_btn=document.querySelector(".tj-AboutMeInnerWrap>.tj-btnWrap .down");
+let boolean=false;
+
+up_btn.addEventListener("click", function(){
+    if(boolean===true) return;
+    boolean=true;
+
+    box.scrollBy({
+        top: -100,
+        behavior: "smooth"
+    });
+
+    setTimeout(function(){
+        boolean=false;
+    }, 300);
+});
+down_btn.addEventListener("click", function(){
+    if(boolean===true) return;
+    boolean=true;
+
+    box.scrollBy({
+        top: 100,
+        behavior: "smooth"
+    });
+
+    setTimeout(function(){
+        boolean=false;
+    }, 300);
+});
+// +이벤트 작동 막는 기능 넣기
+
 // Future button
 const FutureBtn=document.querySelector(".tj-FutureInnerWrap>button[type='button']");
 const FutureBtnText=document.querySelector(".tj-FutureInnerWrap>button[type='button']>i");
@@ -75,7 +133,7 @@ let contentBox_open=false;
 
 FutureBtn.addEventListener("click", function(){
     if(contentBox_open===false){
-        contentBox.style.maxHeight="500px";
+        contentBox.style.maxHeight="max-content";
         FutureBtnText.style.transform="rotate(-180deg)";
         contentBox_open=true;
     }
