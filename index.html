@@ -65,7 +65,7 @@
             <!-- 반응형 container -->
             <div class="container container-lg">
                 <!-- title logo -->
-                <a class="navbar-brand tj-navbar-brand" href="#Main-link"><span class="tj-headerText">ETJ's Portfolio</span></a>
+                <a class="navbar-brand" href="#Main-link"><span class="tj-headerText tj-navbar-brand">ETJ's Portfolio</span></a>
                 <!-- menu button -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -109,16 +109,18 @@
     <div class="container-fluid tj-Main-fullWrap" id="Main-link">
         <img src="images/Main/background.jpg" class="tj-background" alt="">
         <!-- 반응형 container -->
-         <section class="container d-flex justify-content-center tj-mainInnerWrap tj-innerWrap">
+        <section class="container d-flex justify-content-center row-gap-5 tj-mainInnerWrap tj-innerWrap">
             <div class="tj-textWrap">
-                <p><span>엄 태 준</span></p>
-                <p><span>[ 프론트엔드 개발자 포트폴리오 ]</span></p>
+                <p><span>[ 엄태준 ]</span></p>
+                <p><span>프론트엔드</span><span>개발자</span><span>포트폴리오</span></p>
                 <p><span>느리지만 단단한 성장</span></p>
             </div>
 
-            <button type="button"><a href="#" class="d-flex justify-content-center align-items-center">View more</a></button>
-
-         </section>
+            <!-- <button type="button"><a href="#" class="d-flex justify-content-center align-items-center tj-viewmore-btn">View more</a></button> -->
+            <!-- <button type="button" class="btn btn-warning tj-main-btn"><a href="#AboutMe-link">View more <i class="fa-solid fa-arrow-down"></i></a></button> -->
+            <button type="button" class="btn btn-warning tj-main-btn">View more <i class="fa-solid fa-arrow-down"></i></button>
+            
+        </section>
     </div>
     <!-- //main section -->
 
@@ -200,8 +202,11 @@
             <!-- contents -->
             <div class="tj-contentsWrap">
                 <span class="tj-content-title">Front-end Developer</span>
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus animi laborum officiis iure praesentium omnis, sunt, illum corrupti maxime sit voluptas assumenda deserunt accusantium qui harum obcaecati in voluptates tenetur.
+                <p class="tj-content-text">
+                    IT 분야에 대한 오랜 관심과 더불어, 대학 진학 대신 특성화 고등학교에 진학하여 먼저 취업하는 것이 유리하다고 판단했습니다. <br>
+                    이후 특성화 고등학교에서의 전공 수업 중 웹 개발에 관심이 생겼고, 점점 흥미를 느끼며 저와 잘 맞는 분야라고 생각하게 되었습니다. <br>
+                    그래서 웹 프론트엔드 개발자로서의 진로를 결정했습니다. 현재는 프론트엔드 개발자가 되는 것이 첫 목표이지만, 
+                    경력과 실력을 쌓아가며 백엔드 개발까지 확장하여, 최종적으로 풀스택 개발자가 되기를 목표로 하고 있습니다.
                 </p>
                 
             </div>
@@ -218,27 +223,33 @@
             <p class="tj-title">Skills</p>
 
             <!-- contents -->
-            <div class="container tj-contentsWrap">
-                <div class="d-inline-flex flex-wrap justify-content-flex-start align-items-center tj-content tj-ticd">
+            <div class="container d-flex flex-column justify-content-start align-items-start row-gap-3 tj-contentsWrap">
+                <div class="d-inline-flex flex-wrap justify-content-start align-items-start column-gap-3 row-gap-2 tj-content tj-ticd">
                     <p class="tj-content-title">Things I can do</p>
-                    <ul class="tj-content-text">
+                    <ul class="d-inline-flex flex-wrap column-gap-2 row-gap-2 tj-content-text">
                         <li><i class="fa-brands fa-html5" style="color: #E34F26;"></i> HTML5</li>
                         <li><i class="fa-brands fa-css3-alt" style="color: #1572B6;"></i> CSS3</li>
                         <li><i class="fa-brands fa-js" style="color: #F7DF1E;"></i> JavaScript</li>
                     </ul>
                 </div>
-                <div class="d-inline-flex flex-wrap justify-content-flex-start align-items-center tj-content tj-tihd">
+
+                <div class="tj-hr"></div>
+
+                <div class="d-inline-flex flex-wrap justify-content-start align-items-start column-gap-3 row-gap-2 tj-content tj-tihd">
                     <p class="tj-content-title">Things I have done</p>
-                    <ul class="tj-content-text">
+                    <ul class="d-inline-flex flex-wrap column-gap-2 row-gap-2 tj-content-text">
                         <li><i class="fa-brands fa-bootstrap" style="color: #7952B3;"></i> Bootstrap</li>
                         <li><i class="fa-brands fa-figma" style="color: #FF7262;"></i> Figma</li>
                         <li><i class="fa-solid fa-c" style="color: #659AE2;"></i> C Language</li>
                         <li><i class="fa-brands fa-node-js" style="color: #339933;"></i> Node.js</li>
                     </ul>
                 </div>
-                <div class="d-inline-flex flex-wrap justify-content-flex-start align-items-center tj-content tj-tiwd">
+
+                <div class="tj-hr"></div>
+
+                <div class="d-inline-flex flex-wrap justify-content-start align-items-start column-gap-3 row-gap-2 tj-content tj-tiwd">
                     <p class="tj-content-title">Things I will do</p>
-                    <ul class="tj-content-text">
+                    <ul class="d-inline-flex flex-wrap column-gap-2 row-gap-2 tj-content-text">
                         <li><i class="fa-brands fa-react" style="color: #61DAFB;"></i> React.js</li>
                         <li><i class="fa-brands fa-vuejs" style="color: #42B883;"></i> Vue.js</li>
                         <li><i class="fa-brands fa-php" style="color: #777BB4;"></i> PHP</li>
@@ -256,38 +267,28 @@
         <!-- 반응형 container -->
         <section class="container tj-PersonalityValueInnerWrap tj-innerWrap">
             <!-- title -->
-            <p class="tj-title">Personality & Value</p>
+            <p class="d-flex flex-wrap tj-title">
+                <span>Personality </span><span>& Value</span>
+            </p>
             
             <!-- contents -->
-            <div id="carouselExampleFade" class="carousel slide carousel-fade tj-carouselWrap">
-                
-                <div class="w-80 tj-control-btn-box">
-                    <button class="carousel-control-prev single-control-btn" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                        <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
-                        <div class="tj-carousel-btn-text-wrap">
-                            <span class="tj-carousel-btn-text tj-carousel-btn-text-p">Personality</span>
-                            <span class="tj-carousel-btn-text tj-carousel-btn-text-v active">Value</span>
-                        </div>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-
-                    <p class="tj-guide-text"><i class="fa-solid fa-arrow-left"></i> Click this</p>
+            <div class="w-80 tj-contentsWrap">
+                <div class="tj-tabs">
+                    <button type="button" class="tj-tab_P-btn tj-active">Personality</button>
+                    <button type="button" class="tj-tab_V-btn">Value</button>
                 </div>
-
-                <div class="carousel-inner">
-                    <div class="carousel-item active tj-carousel-content-wrap">
-                        <!-- <img src="..." class="d-block w-100" alt="..."> -->
-                        <div class="d-block w-80 tj-carousel-content">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos dolores vitae quia deleniti minus, iste explicabo voluptates accusantium ipsam nisi, exercitationem repellat maxime nam mollitia beatae soluta iure dolorum quo!</p>
-                        </div>
+                <div class="tj-elementsWrap">
+                    <div class="tj-element tj-tab_V">
+                        <p>학습 정신이 중요한 가치라고 생각합니다. 성공과 실패를 떠나 배움은 모든 경험에서 얻을 수 있다고 느낍니다. 이는 실무 능력을 향상시키는 데 중요하고, 빠른 성장을 하게 되는 경로라고 생각합니다.</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam dolorem voluptatibus officiis aperiam saepe odio iure corporis commodi! Iusto eos voluptate rerum minima odit sed in? Quo doloremque quas molestiae.</p>
                     </div>
-                    <div class="carousel-item tj-carousel-content-wrap">
-                        <!-- <img src="..." class="d-block w-100" alt="..."> -->
-                        <div class="d-block w-80 tj-carousel-content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis eos ad eveniet recusandae dolorem asperiores doloremque ducimus eligendi, autem necessitatibus aspernatur temporibus eius saepe nam totam aperiam assumenda dicta quo!</p>
-                        </div>
+
+                    <div class="tj-element tj-tab_P tj-active">
+                        <p>쉽게 포기하지 않고 끝까지 노력하는, 집념있는 성격입니다. 개발 일을 하면서 수많은 어려움을 겪을 테지만, 이를 극복하고자 하는 성향은 이 분야에서 중요한 자원이자 적합한 성격이라고 생각합니다.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis alias sequi voluptatem pariatur delectus accusamus aspernatur maxime in, provident deserunt dolorum quaerat quam quas ut. Excepturi incidunt impedit velit sint.</p>
                     </div>
                 </div>
+
             </div>
         </section>
     </div>
@@ -307,26 +308,36 @@
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="images/Favorite/developing.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block tj-carousel-text-wrap">
+                    <div class="carousel-item tj-carousel-item-1 active">
+                        <img src="images/Favorite/develop.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-block tj-carousel-text-wrap">
                             <!-- 이 텍스트랩이 tab부터?는 사라지니까 @media써서 따로 만들기 -->
                             <h5>Web Develop</h5>
-                            <p>웹 개발은 현재 가장 큰 흥미이자 진로입니다... more text</p>
+                            <p>
+                                <span>웹 개발은 현재 저의 가장 큰 흥미이자</span> <span>진로입니다.</span> <br>
+                                <span>어렸을 때부터 IT 분야에 관심이</span> <span>많았기 때문에 진로로 결정하게 되었습니다.</span>
+                            </p>
                         </div>
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item tj-carousel-item-2">
                         <img src="images/Favorite/basketball.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block tj-carousel-text-wrap">
+                        <div class="carousel-caption d-block tj-carousel-text-wrap">
                             <h5>Basketball</h5>
-                            <p>농구는 팀워크를 늘릴 수 있는 스포츠입니다... more text</p>
+                            <p>
+                                <span>농구는 팀워크를</span> <span>늘릴 수 있는 스포츠입니다.</span> <br>
+                                <span>또한 유연한 대처 능력과</span> <span>문제 해결 능력도 요하기 때문에</span>
+                                <span>실무에서 좋은 능력을 발휘할 수 있습니다.</span>
+                            </p>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <img src="" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block tj-carousel-text-wrap">
-                            <h5>Third slide label</h5>
-                            <p>Some representative placeholder content for the third slide.</p>
+                    <div class="carousel-item tj-carousel-item-3">
+                        <img src="images/Favorite/listentomusic.png" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-block tj-carousel-text-wrap">
+                            <h5>Listen to music</h5>
+                            <p>
+                                <span>음악 감상을 이용해 스스로</span> <span>집중력 향상 및 스트레스 조절을 합니다.</span> <br>
+                                <span>또한 지루함 완화와 창의성 자극으로</span> <span>생산성을 향상시킵니다.</span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -351,7 +362,7 @@
             <p class="tj-title">Archiving</p>
 
             <!-- contents -->
-            <div class="tj-contentsWrap">
+            <div class="d-flex flex-wrap justify-content-center gap-5 tj-contentsWrap">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                     <h5 class="card-title">GitHub</h5>
@@ -394,6 +405,10 @@
         </footer>
     </div>
     <!-- //footer -->
+
+    <!-- top button -->
+    <button id="top-btn"><i class="fa-solid fa-arrow-up"></i></div>
+    <!-- //top button -->
 
 
 
