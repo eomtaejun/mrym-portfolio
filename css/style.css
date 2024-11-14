@@ -424,7 +424,8 @@ header .navbar-toggler:hover{
 .tj-FutureInnerWrap>.tj-contentsWrap{
     width: 80%;
     max-width: 800px;
-    height: 100px;
+    height: 450px;
+    max-height: 100px;
     margin: 0 auto;
     padding: 0 30px 30px 30px;
     /* border: 1px solid #000; */
@@ -434,7 +435,7 @@ header .navbar-toggler:hover{
                 0 3px 7px rgba(0, 0, 0, 0.1);
 
     overflow: hidden;
-    transition: height 0.5s ease-in-out;
+    transition: max-height 0.5s ease-in-out;
 }
 
 .tj-FutureInnerWrap>.tj-contentsWrap .tj-content-title{
@@ -484,6 +485,10 @@ header .navbar-toggler:hover{
 @media screen and (max-width: 767px){
     .tj-FutureInnerWrap{
         height: 1050px;
+    }
+
+    .tj-FutureInnerWrap>.tj-contentsWrap{
+        height: 700px;
     }
 
     .tj-FutureInnerWrap>.tj-contentsWrap .tj-content-title{

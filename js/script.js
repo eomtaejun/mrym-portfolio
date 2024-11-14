@@ -158,6 +158,7 @@ AboutMeContentWrap.addEventListener("wheel", function(event){
 // 이벤트 작동 막기
 AboutMeContentWrap.addEventListener("wheel", (event)=>event.preventDefault());
 AboutMeContentWrap.addEventListener("scroll", (event)=>event.preventDefault());
+AboutMeContentWrap.addEventListener("touchmove", (event)=>event.preventDefault());
 
 
 // Future button
@@ -165,11 +166,29 @@ const FutureBtn=document.querySelector(".tj-FutureInnerWrap>button[type='button'
 const FutureBtnText=document.querySelector(".tj-FutureInnerWrap>button[type='button']>i");
 const contentBox=document.querySelector(".tj-FutureInnerWrap>.tj-contentsWrap");
 let contentBox_open=false;
+let queryScreen="550px";
 
-FutureBtn.addEventListener("click", function(){
+// 767px 이하일 때 동작하는 미디어 쿼리 설정
+const mediaQuery = window.matchMedia("(max-width: 767px)");
+
+// 미디어 쿼리 상태에 따라 실행할 함수
+function handleScreenChange(e) {
+    if (e.matches) {
+        queryScreen="800px"
+    } else {
+        queryScreen="550px"
+    }
+}
+
+// 미디어 쿼리 상태가 변경될 때마다 handleScreenChange 호출
+mediaQuery.addEventListener("change", handleScreenChange);
+
+// 초기 상태에서도 함수 호출
+handleScreenChange(mediaQuery);
+
+function contentBox_height(){
     if(contentBox_open===false){
-        // contentBox.style.height="750px";
-        contentBox.style.height="fit-content";
+        contentBox.style.maxHeight=queryScreen;
         FutureBtnText.style.transform="rotate(-180deg)";
         contentBox_open=true;
     }
@@ -178,7 +197,13 @@ FutureBtn.addEventListener("click", function(){
         FutureBtnText.style.transform="rotate(0deg)";
         contentBox_open=false;
     }
-});
+}
+
+FutureBtn.addEventListener("click", contentBox_height);
+FutureBtn.addEventListener("load", contentBox_height);
+
+
+
 
 // Personality&Value content title
 const tab_P_btn=document.querySelector(".tj-PersonalityValueInnerWrap>.tj-contentsWrap .tj-tabs .tj-tab_P-btn");
