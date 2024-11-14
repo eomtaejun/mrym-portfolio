@@ -157,6 +157,7 @@ AboutMeContentWrap.addEventListener("wheel", function(event){
 
 // 이벤트 작동 막기
 AboutMeContentWrap.addEventListener("wheel", (event)=>event.preventDefault());
+AboutMeContentWrap.addEventListener("scroll", (event)=>event.preventDefault());
 
 
 // Future button
@@ -167,7 +168,8 @@ let contentBox_open=false;
 
 FutureBtn.addEventListener("click", function(){
     if(contentBox_open===false){
-        contentBox.style.maxHeight="530px";
+        // contentBox.style.height="750px";
+        contentBox.style.height="fit-content";
         FutureBtnText.style.transform="rotate(-180deg)";
         contentBox_open=true;
     }

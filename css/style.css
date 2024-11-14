@@ -123,6 +123,13 @@ header .navbar-toggler:hover{
     font-family: "Poppin", sans-serif;
     font-weight: bold;
     font-size: 3.5rem;
+    text-align: start;
+    margin: 0 auto 1rem auto;
+}
+@media screen and (max-width: 767px){
+    .tj-innerWrap>.tj-title{
+        font-size: 3rem;
+    }    
 }
 .w-80{
     width: 80% !important;
@@ -225,14 +232,14 @@ header .navbar-toggler:hover{
     width: 100%;
     height: 100%;
     border-radius: 15px;
-    font-weight: 500;
+    font-weight: 550;
     font-family: "Poppin", sans-serif;
 
     transition: transform 0.2s ease;
 }
 .tj-mainInnerWrap .tj-main-btnWrap:active .tj-main-btn{
     transform: scale(0.9);
-    font-family: "Roboto", sans-serif;
+    /* font-family: "Roboto", sans-serif; */
 }
 
 @media screen and (max-width: 767px){
@@ -267,13 +274,13 @@ header .navbar-toggler:hover{
 
 /* AboutMe section */
 .tj-AboutMe-fullWrap{
-    background-color: #f7f7f7;
+    background-color: #ededed;
 }
 
 .tj-AboutMeInnerWrap>.tj-title{
     width: 80%;
     max-width: 800px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 
     /* font-size: 3.2rem;
     font-weight: bold;
@@ -309,21 +316,18 @@ header .navbar-toggler:hover{
     width: 100%;
     height: 100px;
     font-size: 2rem;
-    color: #aaa;
+    color: #5c5c5c;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     /* border: 1px solid #222; */
 
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    column-gap: 10px;
-    row-gap: 0;
+    
 
     transform: scale(0.8);
-    opacity: 0.6;
+    opacity: 1;
     transition: color 0.35s ease, transform 0.35s ease, opacity 0.35s ease;
 }
 .tj-AboutMeInnerWrap>.tj-contentsWrap .tj-content.tj-active{
@@ -331,6 +335,28 @@ header .navbar-toggler:hover{
     transform: scale(1);
     opacity: 1;
 }
+.tj-AboutMeInnerWrap>.tj-contentsWrap .tj-content p{
+    max-width: 80%;
+    min-width: 40%;
+    padding: 5px 60px;
+    margin-bottom: 0;
+    border-radius: 10px;
+
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    column-gap: 10px;
+    row-gap: 0;
+
+    transition: background-color 0.35s ease;
+}
+.tj-AboutMeInnerWrap>.tj-contentsWrap .tj-content.tj-active p{
+    background-color: #ffd700;
+}
+
 
 .tj-AboutMeInnerWrap>.tj-contentsWrap .tj-content .tj-content-title{
     font-weight: 500;
@@ -388,8 +414,8 @@ header .navbar-toggler:hover{
 .tj-FutureInnerWrap>.tj-title{
     width: 80%;
     max-width: 800px;
-    margin: 0 auto;
-    text-align: start;
+    /* margin: 0 auto; */
+    text-align: end;
     /* font-size: 3.5rem;
     font-weight: bold;
     font-family: "Poppins", sans-serif; */
@@ -398,10 +424,9 @@ header .navbar-toggler:hover{
 .tj-FutureInnerWrap>.tj-contentsWrap{
     width: 80%;
     max-width: 800px;
-    height: 530px;
-    max-height: 100px;
+    height: 100px;
     margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 30px 30px 30px;
     /* border: 1px solid #000; */
     border-radius: 10px;
     background-color: #fff;
@@ -409,18 +434,20 @@ header .navbar-toggler:hover{
                 0 3px 7px rgba(0, 0, 0, 0.1);
 
     overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
+    transition: height 0.5s ease-in-out;
 }
 
 .tj-FutureInnerWrap>.tj-contentsWrap .tj-content-title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     height: 100px;
+    margin-bottom: 0;
     font-size: 1.8rem;
     font-weight: 500;
     font-family: "Poppins", sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.5rem;
 }
 
 .tj-FutureInnerWrap>.tj-contentsWrap .tj-content-text{
@@ -455,8 +482,13 @@ header .navbar-toggler:hover{
 }
 
 @media screen and (max-width: 767px){
+    .tj-FutureInnerWrap{
+        height: 1050px;
+    }
+
     .tj-FutureInnerWrap>.tj-contentsWrap .tj-content-title{
         font-size: 1.5rem;
+        flex-direction: column;
     }
 
     .tj-FutureInnerWrap>.tj-contentsWrap .tj-content-text{
@@ -481,14 +513,11 @@ header .navbar-toggler:hover{
     width: 80%;
     max-width: 800px;
     /* margin: 0 auto 30px auto; */
-    margin: 0 auto;
+    /* margin: 0 auto; */
     text-align: start;
     /* font-size: 3.5rem;
     font-weight: bold;
     font-family: "Poppins", sans-serif; */
-
-    display: flex;
-    justify-content: flex-end;
 }
 
 .tj-SkillsInnerWrap>.tj-contentsWrap{
@@ -562,9 +591,9 @@ header .navbar-toggler:hover{
 .tj-PersonalityValueInnerWrap>.tj-title{
     width: 80%;
     max-width: 1056px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 
-    text-align: start;
+    text-align: end;
     /* font-size: 3rem;
     font-weight: bold; */
 }
@@ -590,7 +619,7 @@ header .navbar-toggler:hover{
     height: 50px;
     border: none;
     border-radius: 10px 10px 0 0;
-    background-color: #eee;
+    background-color: #ddd;
 
     display: flex;
     justify-content: center;
@@ -602,7 +631,6 @@ header .navbar-toggler:hover{
     transition: opacity 0.35s ease;
 }
 .tj-PersonalityValueInnerWrap>.tj-contentsWrap .tj-tabs button[type='button'].tj-active{
-    background-color: #ddd;
     opacity: 1;
 }
 
@@ -683,7 +711,7 @@ header .navbar-toggler:hover{
 .tj-FavoriteInnerWrap>.tj-title{
     width: 80%;
     max-width: 800px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 
     text-align: start;
     /* font-size: 3rem;
@@ -772,9 +800,9 @@ header .navbar-toggler:hover{
 .tj-ArchivingInnerWrap>.tj-title{
     width: 80%;
     max-width: 800px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 
-    text-align: start;
+    text-align: end;
     /* font-size: 3rem;
     font-weight: bold;
     font-family: "Poppins", sans-serif; */
