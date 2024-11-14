@@ -68,62 +68,96 @@ main_btn.addEventListener("click", function(){
 });
 
 // AboueMe section
-// const box = document.querySelector(".tj-AboutMeInnerWrap>.tj-contentsWrap");
-// let lastScrollTop = 0;
+const btn_up=document.querySelector(".tj-AboutMeInnerWrap .tj-btnWrap .tj-btn-up");
+const btn_down=document.querySelector(".tj-AboutMeInnerWrap .tj-btnWrap .tj-btn-down");
 
-// box.addEventListener("scroll", function() {
-//   const scrollTop = box.scrollTop;
+const AboutMeContentWrap=document.querySelector(".tj-AboutMeInnerWrap>.tj-contentsWrap");
+const contents=AboutMeContentWrap.children; // contentsWrap 안의 모든 자식 요소 가져오기
+let boolean=false; // 연속 스크롤 방지 변수
+let count=0; // 현재 콘텐츠 인덱스
 
-//   if (scrollTop > lastScrollTop) {
-//     // 아래로 스크롤
-//     box.scrollBy({
-//         top: 100,
-//         behavior: "smooth"
-//     });
-//   } else if (scrollTop < lastScrollTop) {
-//     // 위로 스크롤
-//     box.scrollBy({
-//         top: -100,
-//         behavior: "smooth"
-//     });
-//   }
-
-//   // 마지막 스크롤 위치 업데이트 후 바로 scrollTop 값을 다시 설정
-//   lastScrollTop = box.scrollTop;
-// });
-
-const box = document.querySelector(".tj-AboutMeInnerWrap>.tj-contentsWrap");
-const up_btn=document.querySelector(".tj-AboutMeInnerWrap>.tj-btnWrap .up");
-const down_btn=document.querySelector(".tj-AboutMeInnerWrap>.tj-btnWrap .down");
-let boolean=false;
-
-up_btn.addEventListener("click", function(){
-    if(boolean===true) return;
+btn_up.addEventListener("click", function(){
+    if(boolean) return;
     boolean=true;
 
-    box.scrollBy({
+    contents[count].classList.toggle("tj-active", false);
+    count = Math.max(0, count - 1); // count를 감소시키되, 0 이하로 내려가지 않도록 설정
+    contents[count].classList.toggle("tj-active", true);
+    AboutMeContentWrap.scrollBy({
         top: -100,
         behavior: "smooth"
     });
 
     setTimeout(function(){
         boolean=false;
-    }, 300);
+    }, 200);
 });
-down_btn.addEventListener("click", function(){
-    if(boolean===true) return;
+
+btn_down.addEventListener("click", function(){
+    if(boolean) return;
     boolean=true;
 
-    box.scrollBy({
+    contents[count].classList.toggle("tj-active", false);
+    count = Math.min(contents.length - 1, count + 1); // count를 증가시키되, 마지막 인덱스를 넘지 않도록 설정
+    contents[count].classList.toggle("tj-active", true);
+    AboutMeContentWrap.scrollBy({
         top: 100,
         behavior: "smooth"
     });
 
     setTimeout(function(){
         boolean=false;
-    }, 300);
+    }, 200);
 });
-// +이벤트 작동 막는 기능 넣기
+
+// chat gpt
+window.addEventListener("load", function(){
+    count=0;
+    AboutMeContentWrap.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
+AboutMeContentWrap.addEventListener("wheel", function(event){
+    // 연속 스크롤 방지
+    if (boolean) return;
+    boolean=true;
+
+    // 현재 콘텐츠의 스타일 초기화
+    contents[count].classList.toggle("tj-active", false);
+
+    // 위로 스크롤한 경우
+    if (event.deltaY<0){
+        count=Math.max(0, count-1); // count를 감소시키되, 0 이하로 내려가지 않도록 설정
+    }
+    // 아래로 스크롤한 경우
+    else if (event.deltaY>0){
+        count=Math.min(contents.length-1, count+1); // count를 증가시키되, 마지막 인덱스를 넘지 않도록 설정
+    }
+
+    // 현재 콘텐츠에 active 클래스나 스타일 적용
+    contents[count].classList.toggle("tj-active", true);
+
+    // 컨테이너를 부드럽게 스크롤
+    AboutMeContentWrap.scrollBy({
+        top: event.deltaY<0 ? -100:100,
+        behavior: "smooth"
+    });
+
+    // 200ms 후에 boolean 값을 초기화
+    setTimeout(function(){
+        boolean = false;
+    }, 200);
+
+    // 기본 스크롤 동작 방지
+    // event.preventDefault();
+});
+
+
+// 이벤트 작동 막기
+AboutMeContentWrap.addEventListener("wheel", (event)=>event.preventDefault());
+
 
 // Future button
 const FutureBtn=document.querySelector(".tj-FutureInnerWrap>button[type='button']");
@@ -133,7 +167,7 @@ let contentBox_open=false;
 
 FutureBtn.addEventListener("click", function(){
     if(contentBox_open===false){
-        contentBox.style.maxHeight="max-content";
+        contentBox.style.maxHeight="530px";
         FutureBtnText.style.transform="rotate(-180deg)";
         contentBox_open=true;
     }

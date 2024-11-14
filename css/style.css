@@ -120,6 +120,9 @@ header .navbar-toggler:hover{
 }
 .tj-innerWrap>.tj-title{
     color: #212529;
+    font-family: "Poppin", sans-serif;
+    font-weight: bold;
+    font-size: 3.5rem;
 }
 .w-80{
     width: 80% !important;
@@ -165,13 +168,14 @@ header .navbar-toggler:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
 }
 
-.tj-mainInnerWrap .tj-textWrap p:nth-child(1){
+.tj-mainInnerWrap .tj-textWrap h2:nth-child(1){
     margin-top: 1rem;
 }
-.tj-mainInnerWrap .tj-textWrap p{
-    display: inline-block;
+.tj-mainInnerWrap .tj-textWrap h2{
+    /* display: inline-block; */
     width: fit-content;
     font-family: "Poppins", sans-serif;
 
@@ -181,7 +185,7 @@ header .navbar-toggler:hover{
     column-gap: 10px;
 }
 
-.tj-mainInnerWrap .tj-textWrap p span{
+.tj-mainInnerWrap .tj-textWrap h2 span{
     color: #f8f8f8;
     width: fit-content;
     text-align: center;
@@ -189,23 +193,23 @@ header .navbar-toggler:hover{
     cursor: default;
 }
 
-.tj-mainInnerWrap .tj-textWrap p:nth-child(1)>span{
+.tj-mainInnerWrap .tj-textWrap h2:nth-child(1)>span{
     font-size: 3rem;
     font-weight: bold;
 }
 
-.tj-mainInnerWrap .tj-textWrap p:nth-child(2)>span{
+.tj-mainInnerWrap .tj-textWrap h2:nth-child(2)>span{
     font-size: 2.4rem;
     font-weight: 600;
 }
 
-.tj-mainInnerWrap .tj-textWrap p:nth-child(3)>span{
+.tj-mainInnerWrap .tj-textWrap h2:nth-child(3)>span{
     font-size: 1.4rem;
     opacity: 0.5;
 
     transition: transform 0.35s ease, opacity 0.35s ease;
 }
-.tj-mainInnerWrap .tj-textWrap p:nth-child(3)>span:hover{
+.tj-mainInnerWrap .tj-textWrap h2:nth-child(3)>span:hover{
     transform: scale(1.1);
     opacity: 1;
 }
@@ -221,19 +225,49 @@ header .navbar-toggler:hover{
     width: 100%;
     height: 100%;
     border-radius: 15px;
-    font-weight: 550;
+    font-weight: 500;
+    font-family: "Poppin", sans-serif;
 
     transition: transform 0.2s ease;
 }
 .tj-mainInnerWrap .tj-main-btnWrap:active .tj-main-btn{
-    /* border: 1px solid #222; */
-    transform: scale(0.9); /* 모서리가 scale때문에 작아지면서 영역을 벗어나게 됨 => 버튼 누른 판정이 아님, click event가 일어나지 않음 */
+    transform: scale(0.9);
+    font-family: "Roboto", sans-serif;
+}
+
+@media screen and (max-width: 767px){
+    .tj-mainInnerWrap .tj-textWrap h2:nth-child(1)>span{
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+    
+    .tj-mainInnerWrap .tj-textWrap h2:nth-child(2)>span{
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    
+    .tj-mainInnerWrap .tj-textWrap h2:nth-child(3)>span{
+        font-size: 1.2rem;
+        opacity: 0.5;
+    
+        transition: transform 0.35s ease, opacity 0.35s ease;
+    }
+    .tj-mainInnerWrap .tj-textWrap h2:nth-child(3)>span:hover{
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    .tj-main-btnWrap{
+        width: 130px;
+        height: 50px;
+        border-radius: 10px;
+    }
 }
 /* //main section */
 
 /* AboutMe section */
 .tj-AboutMe-fullWrap{
-    background-color: #eee;
+    background-color: #f7f7f7;
 }
 
 .tj-AboutMeInnerWrap>.tj-title{
@@ -241,9 +275,9 @@ header .navbar-toggler:hover{
     max-width: 800px;
     margin: 0 auto;
 
-    font-size: 3.2rem;
+    /* font-size: 3.2rem;
     font-weight: bold;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif; */
 }
 
 .tj-AboutMeInnerWrap>.tj-contentsWrap{
@@ -252,7 +286,15 @@ header .navbar-toggler:hover{
     height: 300px;
     overflow: scroll;
     margin: 0 auto;
-    border: 1px solid #222;
+
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15),
+                0 3px 7px rgba(0, 0, 0, 0.1);
+
+    /* border: 1px solid #222; */
+
+    /* position: relative; */
 
     /* display: flex;
     flex-direction: column;
@@ -266,19 +308,76 @@ header .navbar-toggler:hover{
 .tj-AboutMeInnerWrap>.tj-contentsWrap .tj-content{
     width: 100%;
     height: 100px;
-    font-size: 1.3rem;
+    font-size: 2rem;
+    color: #aaa;
+
+    /* border: 1px solid #222; */
 
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    column-gap: 10px;
+    row-gap: 0;
+
+    transform: scale(0.8);
+    opacity: 0.6;
+    transition: color 0.35s ease, transform 0.35s ease, opacity 0.35s ease;
+}
+.tj-AboutMeInnerWrap>.tj-contentsWrap .tj-content.tj-active{
+    color: #000;
+    transform: scale(1);
+    opacity: 1;
+}
+
+.tj-AboutMeInnerWrap>.tj-contentsWrap .tj-content .tj-content-title{
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+}
+.tj-AboutMeInnerWrap>.tj-contentsWrap .tj-content .tj-content-text{
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+}
+
+.tj-AboutMeInnerWrap>.tj-contentsWrap .tj-content:nth-child(1){
+    margin-top: 100px;
+}
+.tj-AboutMeInnerWrap>.tj-contentsWrap .tj-content:nth-child(6){
+    margin-bottom: 100px;
+}
+
+.tj-AboutMeInnerWrap .tj-btnWrap{
+    height: fit-content;
+    margin: 10px auto 0 auto;
+
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 10px;
+}
+.tj-AboutMeInnerWrap .tj-btnWrap button[type="button"]{
+    /* display: none; */
+    /* margin: 10px auto; */
+    height: fit-content;
 }
 
 @media screen and (max-width: 767px){
     .tj-AboutMeInnerWrap>.tj-contentsWrap .tj-content{
-        width: 50%;
+        font-size: 1.5rem;
+        font-weight: 540;
+        transform: scale(0.9);
+    }
+
+    .tj-AboutMeInnerWrap>.tj-contentsWrap .tj-content.tj-active{
+        transform: scale(1.1);
+    }
+
+    .tj-AboutMeInnerWrap .tj-btnWrap{
+        display: flex;
     }
 }
-
 /* //AboutMe section */
 
 /* Future section */
@@ -291,15 +390,15 @@ header .navbar-toggler:hover{
     max-width: 800px;
     margin: 0 auto;
     text-align: start;
-    font-size: 3.5rem;
+    /* font-size: 3.5rem;
     font-weight: bold;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif; */
 }
 
 .tj-FutureInnerWrap>.tj-contentsWrap{
     width: 80%;
     max-width: 800px;
-    height: 500px;
+    height: 530px;
     max-height: 100px;
     margin: 0 auto;
     padding: 0 30px;
@@ -384,9 +483,9 @@ header .navbar-toggler:hover{
     /* margin: 0 auto 30px auto; */
     margin: 0 auto;
     text-align: start;
-    font-size: 3.5rem;
+    /* font-size: 3.5rem;
     font-weight: bold;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif; */
 
     display: flex;
     justify-content: flex-end;
@@ -417,18 +516,21 @@ header .navbar-toggler:hover{
 .tj-SkillsInnerWrap>.tj-contentsWrap .tj-content>.tj-content-title{
     /* 공통 */
     /* margin: 0 30px 0 0; */
-    font-size: 1.4rem;
-    font-weight: 550;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 530;
     margin-bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .tj-SkillsInnerWrap>.tj-contentsWrap .tj-content>.tj-content-text{
     /* 공통 */
     margin: 0;
     padding: 0;
-
-    font-weight: 520;
-
+    
     /* display: inline-flex;
     flex-wrap: wrap;
     column-gap: 20px; */
@@ -436,7 +538,9 @@ header .navbar-toggler:hover{
 
 .tj-SkillsInnerWrap>.tj-contentsWrap .tj-content>.tj-content-text>li{
     /* 공통 */
-    font-size: 1.2rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 430;
 
     background-color: #fff;
     border-radius: 10px;
@@ -446,7 +550,7 @@ header .navbar-toggler:hover{
 }
 
 .tj-SkillsInnerWrap>.tj-contentsWrap .tj-hr{
-    width: 90%;
+    width: 100%;
     height: 1px;
     background-color: #000;
     border-radius: 1px;
@@ -461,9 +565,8 @@ header .navbar-toggler:hover{
     margin: 0 auto;
 
     text-align: start;
-    font-size: 3rem;
-    font-weight: bold;
-    font-family: "Poppins", sans-serif;
+    /* font-size: 3rem;
+    font-weight: bold; */
 }
 
 .tj-PersonalityValueInnerWrap>.tj-contentsWrap{
@@ -583,9 +686,9 @@ header .navbar-toggler:hover{
     margin: 0 auto;
 
     text-align: start;
-    font-size: 3rem; /* 3.5rem */
+    /* font-size: 3rem;
     font-weight: bold;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif; */
 }
 
 .tj-FavoriteInnerWrap>.tj-carouselWrap{
@@ -667,19 +770,25 @@ header .navbar-toggler:hover{
 
 /* Archiving */
 .tj-ArchivingInnerWrap>.tj-title{
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+
     text-align: start;
-    font-size: 3rem; /* 3.5rem */
+    /* font-size: 3rem;
     font-weight: bold;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif; */
 }
 
 .tj-ArchivingInnerWrap>.tj-contentsWrap{
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
 }
 .tj-ArchivingInnerWrap>.tj-contentsWrap .card{
+    font-family: "Roboto", sans-serif;
 
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15),
-    0 3px 7px rgba(0, 0, 0, 0.1);
+                0 3px 7px rgba(0, 0, 0, 0.1);
 
     transition: transform 0.35s;
 }
