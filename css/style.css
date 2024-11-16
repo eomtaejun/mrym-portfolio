@@ -290,7 +290,7 @@ header .navbar-toggler:hover{
 .tj-AboutMeInnerWrap>.tj-contentsWrap{
     width: 80%;
     max-width: 800px;
-    height: 300px;
+    height: 390px;
     overflow: scroll;
     margin: 0 auto;
 
@@ -314,7 +314,7 @@ header .navbar-toggler:hover{
 
 .tj-AboutMeInnerWrap>.tj-contentsWrap .tj-content{
     width: 100%;
-    height: 100px;
+    height: 130px;
     font-size: 2rem;
     color: #5c5c5c;
 
@@ -336,7 +336,7 @@ header .navbar-toggler:hover{
     opacity: 1;
 }
 .tj-AboutMeInnerWrap>.tj-contentsWrap .tj-content p{
-    max-width: 80%;
+    max-width: 90%;
     min-width: 40%;
     padding: 5px 60px;
     margin-bottom: 0;
@@ -368,10 +368,10 @@ header .navbar-toggler:hover{
 }
 
 .tj-AboutMeInnerWrap>.tj-contentsWrap .tj-content:nth-child(1){
-    margin-top: 100px;
+    margin-top: 130px;
 }
 .tj-AboutMeInnerWrap>.tj-contentsWrap .tj-content:nth-child(6){
-    margin-bottom: 100px;
+    margin-bottom: 130px;
 }
 
 .tj-AboutMeInnerWrap .tj-btnWrap{

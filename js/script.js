@@ -84,7 +84,7 @@ btn_up.addEventListener("click", function(){
     count = Math.max(0, count - 1); // count를 감소시키되, 0 이하로 내려가지 않도록 설정
     contents[count].classList.toggle("tj-active", true);
     AboutMeContentWrap.scrollBy({
-        top: -100,
+        top: -130,
         behavior: "smooth"
     });
 
@@ -101,7 +101,7 @@ btn_down.addEventListener("click", function(){
     count = Math.min(contents.length - 1, count + 1); // count를 증가시키되, 마지막 인덱스를 넘지 않도록 설정
     contents[count].classList.toggle("tj-active", true);
     AboutMeContentWrap.scrollBy({
-        top: 100,
+        top: 130,
         behavior: "smooth"
     });
 
@@ -141,7 +141,7 @@ AboutMeContentWrap.addEventListener("wheel", function(event){
 
     // 컨테이너를 부드럽게 스크롤
     AboutMeContentWrap.scrollBy({
-        top: event.deltaY<0 ? -100:100,
+        top: event.deltaY<0 ? -130:130,
         behavior: "smooth"
     });
 
