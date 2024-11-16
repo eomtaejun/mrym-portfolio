@@ -10,16 +10,17 @@ window.addEventListener("scroll", function(){
 });
 
 // top button
-const top_btn=document.querySelector("#top-btn");
+const top_btn_wrap=document.querySelector(".tj-top-btnWrap");
+const top_btn=document.querySelector(".tj-top-btnWrap>#top-btn");
 
 function top_btn_display(){
-    if(document.documentElement.scrollTop<570) top_btn.style.display="none";
-    else top_btn.style.display="block"
+    if(document.documentElement.scrollTop<570) top_btn_wrap.style.display="none";
+    else top_btn_wrap.style.display="block"
 }
 window.addEventListener("scroll", top_btn_display);
 window.addEventListener("load", top_btn_display);
 
-top_btn.addEventListener("click", function(){
+top_btn_wrap.addEventListener("click", function(){
     window.scrollTo({
         top: 0,
         behavior: "smooth"
@@ -66,6 +67,18 @@ main_btn.addEventListener("click", function(){
         behavior: "smooth"
     });
 });
+
+// nav click event ========== help
+// const nav_contents=document.querySelectorAll("header .collapse .navbar-nav .tj-nav-link");
+
+// const navbar_toggler=document.querySelector("header navbar-toggler");
+
+// nav_contents.forEach(content=>{
+//     content.addEventListener("click", function(){
+//         navbar_toggler.classList.toggle("collapsed", false);
+//     });
+// });
+
 
 // AboueMe section
 const btn_up=document.querySelector(".tj-AboutMeInnerWrap .tj-btnWrap .tj-btn-up");
@@ -162,45 +175,46 @@ AboutMeContentWrap.addEventListener("touchmove", (event)=>event.preventDefault()
 
 
 // Future button
-const FutureBtn=document.querySelector(".tj-FutureInnerWrap>button[type='button']");
-const FutureBtnText=document.querySelector(".tj-FutureInnerWrap>button[type='button']>i");
-const contentBox=document.querySelector(".tj-FutureInnerWrap>.tj-contentsWrap");
-let contentBox_open=false;
-let queryScreen="550px";
+const FutureBtn = document.querySelector(".tj-FutureInnerWrap>button[type='button']");
+const FutureBtnText = document.querySelector(".tj-FutureInnerWrap>button[type='button']>i");
+const contentBox = document.querySelector(".tj-FutureInnerWrap>.tj-contentsWrap");
+const FutureFullWrap=document.querySelector(".tj-Future-fullWrap");
+let contentBox_open = false;
 
-// 767px 이하일 때 동작하는 미디어 쿼리 설정
-const mediaQuery = window.matchMedia("(max-width: 767px)");
-
-// 미디어 쿼리 상태에 따라 실행할 함수
-function handleScreenChange(e) {
-    if (e.matches) {
-        queryScreen="800px"
+// 콘텐츠의 fit-content 높이를 계산하고 max-height에 적용하는 함수
+function contentBox_height() {
+    if (!contentBox_open) {
+        // 콘텐츠의 실제 높이 계산
+        const contentHeight = contentBox.scrollHeight;
+        contentBox.style.maxHeight = contentHeight + "px"; // 동적 max-height 설정
+        FutureFullWrap.style.height=contentHeight+300+"px";
+        FutureBtnText.style.transform = "rotate(-180deg)";
+        contentBox_open = true;
     } else {
-        queryScreen="550px"
+        // 접기
+        contentBox.style.maxHeight = "100px";
+        FutureBtnText.style.transform = "rotate(0deg)";
+        contentBox_open = false;
     }
 }
 
-// 미디어 쿼리 상태가 변경될 때마다 handleScreenChange 호출
-mediaQuery.addEventListener("change", handleScreenChange);
-
-// 초기 상태에서도 함수 호출
-handleScreenChange(mediaQuery);
-
-function contentBox_height(){
-    if(contentBox_open===false){
-        contentBox.style.maxHeight=queryScreen;
-        FutureBtnText.style.transform="rotate(-180deg)";
-        contentBox_open=true;
-    }
-    else{
-        contentBox.style.maxHeight="100px";
-        FutureBtnText.style.transform="rotate(0deg)";
-        contentBox_open=false;
+// 뷰포트 크기 변경 시 콘텐츠 높이 업데이트
+function updateContentHeight() {
+    // 콘텐츠가 열려있다면, 현재의 높이를 재계산하여 max-height 설정
+    if (contentBox_open) {
+        const contentHeight = contentBox.scrollHeight; // 현재 콘텐츠의 높이를 계산
+        FutureFullWrap.style.height=contentHeight+300+"px";
+        contentBox.style.maxHeight = contentHeight + "px"; // 동적 max-height 설정
     }
 }
 
+// 버튼 클릭 이벤트 설정
 FutureBtn.addEventListener("click", contentBox_height);
-FutureBtn.addEventListener("load", contentBox_height);
+
+// 뷰포트 크기 변경 이벤트 설정
+window.addEventListener("resize", updateContentHeight);
+
+
 
 
 
