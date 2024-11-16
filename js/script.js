@@ -73,12 +73,12 @@ const btn_down=document.querySelector(".tj-AboutMeInnerWrap .tj-btnWrap .tj-btn-
 
 const AboutMeContentWrap=document.querySelector(".tj-AboutMeInnerWrap>.tj-contentsWrap");
 const contents=AboutMeContentWrap.children; // contentsWrap 안의 모든 자식 요소 가져오기
-let boolean=false; // 연속 스크롤 방지 변수
+let boolean_AM=false; // 연속 스크롤 방지 변수
 let count=0; // 현재 콘텐츠 인덱스
 
 btn_up.addEventListener("click", function(){
-    if(boolean) return;
-    boolean=true;
+    if(boolean_AM) return;
+    boolean_AM=true;
 
     contents[count].classList.toggle("tj-active", false);
     count = Math.max(0, count - 1); // count를 감소시키되, 0 이하로 내려가지 않도록 설정
@@ -89,13 +89,13 @@ btn_up.addEventListener("click", function(){
     });
 
     setTimeout(function(){
-        boolean=false;
+        boolean_AM=false;
     }, 200);
 });
 
 btn_down.addEventListener("click", function(){
-    if(boolean) return;
-    boolean=true;
+    if(boolean_AM) return;
+    boolean_AM=true;
 
     contents[count].classList.toggle("tj-active", false);
     count = Math.min(contents.length - 1, count + 1); // count를 증가시키되, 마지막 인덱스를 넘지 않도록 설정
@@ -106,7 +106,7 @@ btn_down.addEventListener("click", function(){
     });
 
     setTimeout(function(){
-        boolean=false;
+        boolean_AM=false;
     }, 200);
 });
 
@@ -121,8 +121,8 @@ window.addEventListener("load", function(){
 
 AboutMeContentWrap.addEventListener("wheel", function(event){
     // 연속 스크롤 방지
-    if (boolean) return;
-    boolean=true;
+    if (boolean_AM) return;
+    boolean_AM=true;
 
     // 현재 콘텐츠의 스타일 초기화
     contents[count].classList.toggle("tj-active", false);
@@ -145,9 +145,9 @@ AboutMeContentWrap.addEventListener("wheel", function(event){
         behavior: "smooth"
     });
 
-    // 200ms 후에 boolean 값을 초기화
+    // 200ms 후에 boolean_AM 값을 초기화
     setTimeout(function(){
-        boolean = false;
+        boolean_AM = false;
     }, 200);
 
     // 기본 스크롤 동작 방지
@@ -212,16 +212,16 @@ const tab_P=document.querySelector(".tj-PersonalityValueInnerWrap>.tj-contentsWr
 const tab_V=document.querySelector(".tj-PersonalityValueInnerWrap>.tj-contentsWrap .tj-elementsWrap .tj-tab_V");
 
 tab_P_btn.addEventListener("click", function(){
+    tab_P.classList.toggle("tj-active", true);
+    tab_V.classList.toggle("tj-active", false);
+
     tab_P_btn.classList.toggle("tj-active", true);
     tab_V_btn.classList.toggle("tj-active", false);
-
-    tab_P.style.opacity="1";
-    tab_V.style.opacity="0";
 });
 tab_V_btn.addEventListener("click", function(){
+    tab_V.classList.toggle("tj-active", true);
+    tab_P.classList.toggle("tj-active", false);
+    
     tab_V_btn.classList.toggle("tj-active", true);
     tab_P_btn.classList.toggle("tj-active", false);
-
-    tab_V.style.opacity="1";
-    tab_P.style.opacity="0";
 });

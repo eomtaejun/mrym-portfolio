@@ -602,6 +602,10 @@ header .navbar-toggler:hover{
 /* //Skills section */
 
 /* Personality&Value section */
+.tj-PersonalityValueInnerWrap{
+    height: 800px;
+}
+
 .tj-PersonalityValueInnerWrap>.tj-title{
     width: 80%;
     max-width: 1056px;
@@ -656,6 +660,13 @@ header .navbar-toggler:hover{
     /* background-color: #ddd; */
 }
 
+/* .tj-PersonalityValueInnerWrap>.tj-contentsWrap .tj-elementsWrap .tj-element.tj-tab_P{
+    z-index: 2;
+}
+.tj-PersonalityValueInnerWrap>.tj-contentsWrap .tj-elementsWrap .tj-element.tj-tab_V{
+    z-index: 1;
+} */
+
 .tj-PersonalityValueInnerWrap>.tj-contentsWrap .tj-elementsWrap .tj-element{
     width: 100%;
     height: 500px;
@@ -669,12 +680,14 @@ header .navbar-toggler:hover{
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 1;
 
     opacity: 0;
     transition: opacity 0.35s ease;
 }
 .tj-PersonalityValueInnerWrap>.tj-contentsWrap .tj-elementsWrap .tj-element.tj-active{
     opacity: 1;
+    z-index: 2;
 }
 
 .tj-PersonalityValueInnerWrap>.tj-contentsWrap .tj-elementsWrap .tj-element p{
@@ -686,6 +699,10 @@ header .navbar-toggler:hover{
 }
 
 @media screen and (max-width: 767px){
+    .tj-PersonalityValueInnerWrap{
+        height: 950px;
+    }
+
     .tj-PersonalityValueInnerWrap>.tj-contentsWrap{
         width: 95%;
     }
