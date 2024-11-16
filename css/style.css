@@ -169,7 +169,7 @@ header .navbar-toggler:hover{
     height: fit-content;
     margin: 24px auto 0 auto;
     padding: 5px 10px;
-    background: rgba(34, 34, 34, 0.5);
+    background-color: rgba(34, 34, 34, 0.5);
     border-radius: 10px;
 
     display: flex;
@@ -200,23 +200,24 @@ header .navbar-toggler:hover{
     cursor: default;
 }
 
-.tj-mainInnerWrap .tj-textWrap h2:nth-child(1)>span{
+.tj-mainInnerWrap .tj-textWrap h2:nth-child(1)>span,
+.tj-mainInnerWrap .tj-textWrap h2:nth-child(2)>span{
     font-size: 3rem;
     font-weight: bold;
 }
 
-.tj-mainInnerWrap .tj-textWrap h2:nth-child(2)>span{
+.tj-mainInnerWrap .tj-textWrap h2:nth-child(3)>span{
     font-size: 2.4rem;
     font-weight: 600;
 }
 
-.tj-mainInnerWrap .tj-textWrap h2:nth-child(3)>span{
+.tj-mainInnerWrap .tj-textWrap h2:nth-child(4)>span{
     font-size: 1.4rem;
     opacity: 0.5;
 
     transition: transform 0.35s ease, opacity 0.35s ease;
 }
-.tj-mainInnerWrap .tj-textWrap h2:nth-child(3)>span:hover{
+.tj-mainInnerWrap .tj-textWrap h2:nth-child(4)>span:hover{
     transform: scale(1.1);
     opacity: 1;
 }
@@ -243,23 +244,31 @@ header .navbar-toggler:hover{
 }
 
 @media screen and (max-width: 767px){
-    .tj-mainInnerWrap .tj-textWrap h2:nth-child(1)>span{
+    .tj-mainInnerWrap .tj-textWrap{
+        width: 90%;
+        background-color: rgba(34, 34, 34, 0.5);
+    }
+
+    .tj-mainInnerWrap .tj-textWrap h2:nth-child(1)>span,
+    .tj-mainInnerWrap .tj-textWrap h2:nth-child(2)>span{
         font-size: 2.5rem;
         font-weight: bold;
+        display: inline-block;
+        margin-top: 16px;
     }
     
-    .tj-mainInnerWrap .tj-textWrap h2:nth-child(2)>span{
+    .tj-mainInnerWrap .tj-textWrap h2:nth-child(3)>span{
         font-size: 2rem;
         font-weight: 600;
     }
     
-    .tj-mainInnerWrap .tj-textWrap h2:nth-child(3)>span{
+    .tj-mainInnerWrap .tj-textWrap h2:nth-child(4)>span{
         font-size: 1.2rem;
         opacity: 0.5;
     
         transition: transform 0.35s ease, opacity 0.35s ease;
     }
-    .tj-mainInnerWrap .tj-textWrap h2:nth-child(3)>span:hover{
+    .tj-mainInnerWrap .tj-textWrap h2:nth-child(4)>span:hover{
         transform: scale(1.1);
         opacity: 1;
     }
