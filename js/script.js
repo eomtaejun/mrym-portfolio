@@ -68,17 +68,6 @@ main_btn.addEventListener("click", function(){
     });
 });
 
-// nav click event ========== help
-// const nav_contents=document.querySelectorAll("header .collapse .navbar-nav .tj-nav-link");
-
-// const navbar_toggler=document.querySelector("header navbar-toggler");
-
-// nav_contents.forEach(content=>{
-//     content.addEventListener("click", function(){
-//         navbar_toggler.classList.toggle("collapsed", false);
-//     });
-// });
-
 
 // AboueMe section
 const btn_up=document.querySelector(".tj-AboutMeInnerWrap .tj-btnWrap .tj-btn-up");
@@ -89,6 +78,15 @@ const contents=AboutMeContentWrap.children; // contentsWrap 안의 모든 자식
 let boolean_AM=false; // 연속 스크롤 방지 변수
 let count=0; // 현재 콘텐츠 인덱스
 
+window.addEventListener("load", function(){
+    count=0;
+    AboutMeContentWrap.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
+// mobile btn click
 btn_up.addEventListener("click", function(){
     if(boolean_AM) return;
     boolean_AM=true;
@@ -123,15 +121,7 @@ btn_down.addEventListener("click", function(){
     }, 200);
 });
 
-// chat gpt
-window.addEventListener("load", function(){
-    count=0;
-    AboutMeContentWrap.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-});
-
+// desktop scroll
 AboutMeContentWrap.addEventListener("wheel", function(event){
     // 연속 스크롤 방지
     if (boolean_AM) return;
@@ -171,7 +161,10 @@ AboutMeContentWrap.addEventListener("wheel", function(event){
 // 이벤트 작동 막기
 AboutMeContentWrap.addEventListener("wheel", (event)=>event.preventDefault());
 AboutMeContentWrap.addEventListener("scroll", (event)=>event.preventDefault());
-AboutMeContentWrap.addEventListener("touchmove", (event)=>event.preventDefault());
+AboutMeContentWrap.addEventListener("touchmove", function(event){
+    event.preventDefault();
+    
+});
 
 
 // Future button
