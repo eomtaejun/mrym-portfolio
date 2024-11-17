@@ -320,19 +320,23 @@ header .navbar-toggler:hover{
 }
 .tj-AboutMeInnerWrap>.tj-contentsWrap::before{
     content: "scroll here!";
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
     width: fit-content;
     height: fit-content;
     padding: 5px 10px;
-    background-color: #ffd700;
-    border: 2px solid #F5CD00;
+    background-color: rgba(255, 215, 0, 0.5);
+    border: 2px solid rgba(245, 205, 0, 0.5);
+    color: #000;
     border-radius: 5px;
 
     font-family: "Roboto", sans-serif;
     font-size: 1.3rem;
     font-weight: 500;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     position: absolute;
     top: 50px;
     left: 50%;
@@ -460,6 +464,10 @@ header .navbar-toggler:hover{
     .tj-AboutMeInnerWrap>.tj-contentsWrap .tj-content:nth-child(4),
     .tj-AboutMeInnerWrap>.tj-contentsWrap .tj-content:nth-child(5){
         font-size: 1.2rem;
+    }
+
+    .tj-AboutMeInnerWrap>.tj-contentsWrap::before{
+        content: "use button below!";
     }
 
     .tj-AboutMeInnerWrap .tj-btnWrap{

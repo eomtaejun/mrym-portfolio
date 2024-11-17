@@ -159,12 +159,10 @@ AboutMeContentWrap.addEventListener("wheel", function(event){
 
 
 // 이벤트 작동 막기
+let event_boolean=false;
 AboutMeContentWrap.addEventListener("wheel", (event)=>event.preventDefault());
 AboutMeContentWrap.addEventListener("scroll", (event)=>event.preventDefault());
-AboutMeContentWrap.addEventListener("touchmove", function(event){
-    event.preventDefault();
-    
-});
+AboutMeContentWrap.addEventListener("touchmove", (event)=>event.preventDefault());
 
 
 // Future button
