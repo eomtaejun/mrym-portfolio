@@ -540,6 +540,7 @@ header .navbar-toggler:hover{
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
     /* width: auto; */
     /* margin-bottom: 0; */
+    cursor: default;
 
     transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
