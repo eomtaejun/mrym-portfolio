@@ -535,10 +535,17 @@ header .navbar-toggler:hover{
     font-weight: 430;
 
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 5px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
     /* width: auto; */
     /* margin-bottom: 0; */
+
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.tj-SkillsInnerWrap>.tj-contentsWrap .tj-content>.tj-content-text>li:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1);
 }
 
 .tj-SkillsInnerWrap>.tj-contentsWrap .tj-hr{
