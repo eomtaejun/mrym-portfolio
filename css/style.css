@@ -336,9 +336,10 @@ header .navbar-toggler:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 
     position: absolute;
-    top: 50px;
+    top: 30px;
     left: 50%;
     transform: translate(-50%, 0);
 
