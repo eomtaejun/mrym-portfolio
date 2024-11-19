@@ -505,7 +505,7 @@ header .navbar-toggler:hover{
     transition: max-height 0.5s ease-in-out;
 }
 
-.tj-SkillsInnerWrap>.tj-contentsWrap .tj-content .tj-content-title{
+.tj-SkillsInnerWrap>.tj-contentsWrap .tj-content>.tj-content-text-wrap>.tj-content-title{
     /* 공통 */
     /* margin: 0 30px 0 0; */
     font-family: "Poppins", sans-serif;
@@ -519,17 +519,13 @@ header .navbar-toggler:hover{
     align-items: center;
 }
 
-.tj-SkillsInnerWrap>.tj-contentsWrap .tj-content>.tj-content-text{
+.tj-SkillsInnerWrap>.tj-contentsWrap .tj-content>.tj-content-text-wrap{
     /* 공통 */
     margin: 0;
     padding: 0;
-    
-    /* display: inline-flex;
-    flex-wrap: wrap;
-    column-gap: 20px; */
 }
 
-.tj-SkillsInnerWrap>.tj-contentsWrap .tj-content>.tj-content-text>li{
+.tj-SkillsInnerWrap>.tj-contentsWrap .tj-content>.tj-content-text-wrap>.tj-content-text{
     /* 공통 */
     font-family: "Roboto", sans-serif;
     font-size: 1.1rem;
@@ -545,7 +541,7 @@ header .navbar-toggler:hover{
 
     transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
-.tj-SkillsInnerWrap>.tj-contentsWrap .tj-content>.tj-content-text>li:hover{
+.tj-SkillsInnerWrap>.tj-contentsWrap .tj-content>.tj-content-text-wrap>.tj-content-text:hover{
     transform: translateY(-5px);
     box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1);
 }
