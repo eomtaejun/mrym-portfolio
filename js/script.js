@@ -204,8 +204,7 @@ FutureBtn.addEventListener("click", contentBox_height);
 
 // 뷰포트 크기 변경 이벤트 설정
 window.addEventListener("resize", updateContentHeight);
-
-
+window.addEventListener("load", updateContentHeight);
 
 
 
