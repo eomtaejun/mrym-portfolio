@@ -466,13 +466,10 @@ header .navbar-toggler:hover{
     .tj-AboutMeInnerWrap>.tj-contentsWrap .tj-content:nth-child(5){
         font-size: 1.2rem;
     }
-
+}
+@media screen and (max-width: 991px){
     .tj-AboutMeInnerWrap>.tj-contentsWrap::before{
         content: "use button below!";
-    }
-
-    .tj-AboutMeInnerWrap .tj-btnWrap{
-        display: flex;
     }
 }
 /* //AboutMe section */
