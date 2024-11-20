@@ -1023,7 +1023,8 @@ header .navbar-toggler:hover{
     gap: 20px; */
 }
 
-.tj-footerInnerWrap p{
+.tj-footerInnerWrap p,
+.tj-footerInnerWrap a{
     color: #fff;
     margin-bottom: 0;
     font-family: "Poppins", sans-serif;
@@ -1037,7 +1038,8 @@ header .navbar-toggler:hover{
 }
 
 @media screen and (max-width: 767px){
-    .tj-footerInnerWrap p{
+    .tj-footerInnerWrap p,
+    .tj-footerInnerWrap a{
         font-size: 0.8rem;
         line-height: 1.36rem;
     }
